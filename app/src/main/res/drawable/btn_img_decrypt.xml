@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_pressed="true">
+        <layer-list >
+            <item>
+                <bitmap android:src="@drawable/decrypt" />
+            </item>
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="#7f262626" />
+                </shape>
+            </item>
+
+        </layer-list>
+    </item>
+    <item android:state_focused="true">
+        <layer-list >
+            <item>
+                <bitmap android:src="@drawable/decrypt" />
+            </item>
+            <item>
+                <shape android:shape="rectangle" >
+                    <solid android:color="#66fff700"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item>
+        <layer-list>
+            <item>
+                <bitmap android:src="@drawable/decrypt"></bitmap>
+            </item>
+        </layer-list>
+
+    </item>
+
+</selector>
+
+
+

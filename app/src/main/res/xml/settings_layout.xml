@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/key_length"
+        android:entryValues="@array/key_lengthValues"
+        android:key="safety"
+        android:title="@string/safety" />
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/mode"
+        android:entryValues="@array/modeValues"
+        android:key="mode"
+        android:title="@string/mode" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="defaultm"
+        android:title="@string/defaultm" />
+    <EditTextPreference
+        android:dependency="defaultm"
+        android:key="default_name"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/name" />
+    <EditTextPreference
+        android:dependency="defaultm"
+        android:key="password"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/password" />
+    <CheckBoxPreference
+        android:id="@+id/speed_mode"
+        android:defaultValue="false"
+        android:key="speed_mode"
+        android:title="@string/speed" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="hidepath"
+        android:title="@string/hidepath" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="ownerpath"
+        android:title="@string/ownerpath" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="deleteAfterAction"
+        android:title="@string/deleteAfterAction" />
+    <Preference
+        android:key="defaultFolder"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/defaultFolder" />
+</PreferenceScreen>
