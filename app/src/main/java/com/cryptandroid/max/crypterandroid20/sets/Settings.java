@@ -1,20 +1,14 @@
-package com.cryptandroid.max.crypterandroid20;
+package com.cryptandroid.max.crypterandroid20.sets;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.preference.PreferenceManager;
 import android.util.Log;
-
+import com.cryptandroid.max.crypterandroid20.R;
 import java.util.HashMap;
-
-/**
- * Created by MAX on 30.05.2018.
- */
 
 public class Settings {
     public static final String TAG = "MAX__";
-    public enum MODE {CRYPT, DECRYPT};
     /**
      *
      * @return HashMap настроек
@@ -30,11 +24,11 @@ public class Settings {
         String[] modeArray = activity.getResources().getStringArray(R.array.mode);
         String modeString = sp.getString("mode", modeArray[0]);
         boolean modeEach = modeString.equals("1") ? true : false;
-        String[] safetyArray = activity.getResources().getStringArray(R.array.key_length);
-        String safety = sp.getString("safety", safetyArray[0]);
-        String name = sp.getString("name", "max");
-        String password = sp.getString("password", "max");
-        String defFolder = sp.getString("defaultFolder", "/sdcard/cryptoAndroid");
+        String[] algnameArray = activity.getResources().getStringArray(R.array.alg_nameValues);
+        String algname = sp.getString("algname", algnameArray[0]);
+        String name = sp.getString("name", HardSettings.DEFAULT_NAME);
+        String password = sp.getString("password", HardSettings.DEFAULT_PASSWORD);
+        String defFolder = sp.getString("defaultFolder", HardSettings.DEFAULT_PATH);
 
         result.put("speed_mode", speed_mode);
         result.put("deleteAfterAction", deleteAfterAction);
@@ -42,7 +36,7 @@ public class Settings {
         result.put("hidepath", hidepath);
         result.put("defaultm", defaultm);
         result.put("modeEach", modeEach);
-        result.put("safety", safety);
+        result.put("algname", algname);
         result.put("name", name);
         result.put("password", password);
         result.put("defaultFolder", defFolder);

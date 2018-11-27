@@ -1,4 +1,4 @@
-package com.cryptandroid.max.crypterandroid20;
+package com.cryptandroid.max.crypterandroid20.screens;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -18,16 +18,13 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.cryptandroid.max.crypterandroid20.R;
+import com.cryptandroid.max.crypterandroid20.controllers.FileController;
+import com.cryptandroid.max.crypterandroid20.controllers.WindowsController;
 import org.apache.commons.io.FileUtils;
-
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
-
-
-/**
- * Created by MAX on 30.05.2018.
- */
 
 public class FilesWindow extends Fragment implements View.OnClickListener, CheckBox.OnCheckedChangeListener {
     public enum STATE {DEFAULT, MOVE, COPY, CHOOSE_FOLDER, CHOOSE_FILES};

@@ -1,4 +1,4 @@
-package com.cryptandroid.max.crypterandroid20;
+package com.cryptandroid.max.crypterandroid20.screens;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -7,10 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
-/**
- * Created by MAX on 09.06.2018.
- */
+import com.cryptandroid.max.crypterandroid20.R;
 
 public class MessageWindow {
     /**

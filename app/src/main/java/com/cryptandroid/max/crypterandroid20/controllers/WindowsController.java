@@ -1,4 +1,4 @@
-package com.cryptandroid.max.crypterandroid20;
+package com.cryptandroid.max.crypterandroid20.controllers;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -8,8 +8,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-
-import java.util.Set;
+import com.cryptandroid.max.crypterandroid20.R;
+import com.cryptandroid.max.crypterandroid20.screens.FilesWindow;
+import com.cryptandroid.max.crypterandroid20.screens.MainWindow;
+import com.cryptandroid.max.crypterandroid20.screens.SettingsWindow;
 
 public class WindowsController extends FragmentActivity {
     private ViewPager pager;

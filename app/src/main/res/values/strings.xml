@@ -1,12 +1,12 @@
 <resources>
-    <string name = "app_name"> CrypterAndroid 2.0 </string>
+    <string name = "app_name"> CrypterAndroid 3.0 </string>
 
-    <string-array name = "key_length">
-        <item> 128 </item>
-        <item> 192 </item>
-        <item> 256 </item>
+    <string-array name = "alg_name">
+        <item>GOST-34.12</item>
+        <item>AES</item>
+        <item>Threefish</item>
     </string-array>
-    <string-array name = "key_lengthValues">
+    <string-array name = "alg_nameValues">
         <item> 1 </item>
         <item> 2 </item>
         <item> 3 </item>
@@ -32,7 +32,7 @@
     <string name = "txtv_choose_items"> Selected items: </string>
     <string name = "txtv_choose_files"> Selected files: </string>
     <string name = "txtv_progress"> Progress </string>
-    <string name = "txtv_progress_bytes"> Byte processing: * of? </string>
+    <string name = "txtv_progress_bytes"> Kb processing: * of? </string>
     <string name = "txtv_progress_files"> Processed files: * from? </string>
     <string name = "btn_finish"> Done </string>
     <string name = "btn_clear"> Clear </string>
