@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">CrypterAndroid 2.0</string>
+    <string name="app_name">CrypterAndroid 3.0</string>
 
-    <string-array name="key_length">
-        <item>128</item>
-        <item>192</item>
-        <item>256</item>
+    <string-array name = "alg_name">
+        <item>ГОСТ-34.12</item>
+        <item>AES</item>
+        <item>Threefish</item>
     </string-array>
-    <string-array name="key_lengthValues">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
+    <string-array name = "alg_nameValues">
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
     </string-array>
 
     <string-array name="mode">
@@ -32,7 +32,7 @@
     <string name="txtv_choose_items">Выбрано элементов:</string>
     <string name="txtv_choose_files">Выбрано файлов:</string>
     <string name="txtv_progress">Прогресс</string>
-    <string name="txtv_progress_bytes">Обработано байт: * из ?</string>
+    <string name="txtv_progress_bytes">Обработано Кб: * из ?</string>
     <string name="txtv_progress_files">Обработано файлов: * из ?</string>
     <string name="btn_finish">Готово</string>
     <string name="btn_clear">Очистить</string>

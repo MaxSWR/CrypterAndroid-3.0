@@ -1,10 +1,8 @@
-package com.cryptandroid.max.crypterandroid20;
+package com.cryptandroid.max.crypterandroid20.screens;
 
-import android.app.Dialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +11,13 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.cryptandroid.max.crypterandroid20.R;
+import com.cryptandroid.max.crypterandroid20.controllers.FileController;
+import com.cryptandroid.max.crypterandroid20.controllers.WindowsController;
+import com.cryptandroid.max.crypterandroid20.crypt.FileCrypter;
+import com.cryptandroid.max.crypterandroid20.crypt.MODE;
+import com.cryptandroid.max.crypterandroid20.sets.Settings;
 import java.io.File;
-import java.util.HashMap;
-import java.util.concurrent.TimeoutException;
 
 /**
  * Created by MAX on 30.05.2018.
@@ -39,7 +40,7 @@ public class MainWindow extends Fragment implements View.OnClickListener {
     private String progress_bytes;
     private String progress_files;
     private enum STATE {CHOOSE_FILES, INFO_FILES, PROGRESS};
-    private CryptFileController cryptController;
+    private FileCrypter fileCrypter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,8 @@ public class MainWindow extends Fragment implements View.OnClickListener {
         progress_bytes = getResources().getString(R.string.txtv_progress_bytes);
         progress_files = getResources().getString(R.string.txtv_progress_files);
         showCurrentState(STATE.CHOOSE_FILES);
+
+        new FileCrypter(this, "", "", MODE.DECRYPT);
         return view;
     }
 
@@ -85,7 +88,7 @@ public class MainWindow extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.btn_crypt:
-                boolean useDefault = (boolean)Settings.getSettings(windowsController).get("defaultm");
+                boolean useDefault = (boolean) Settings.getSettings(windowsController).get("defaultm");
 
                 if (useDefault) {
                     String name = Settings.getSettings(windowsController).get("name").toString();
@@ -98,12 +101,12 @@ public class MainWindow extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.btn_decrypt:
-                    MessageWindow.showPassDialog(this);
+                MessageWindow.showPassDialog(this);
                 break;
 
             case R.id.btn_cancel:
-                if (cryptController != null & cryptController.getStatus() == AsyncTask.Status.RUNNING) {
-                    cryptController.cancel(false);
+                if (fileCrypter != null & fileCrypter.getStatus() == AsyncTask.Status.RUNNING) {
+                    fileCrypter.cancel(false);
                 }
 
                 clearFiles();
@@ -171,8 +174,8 @@ public class MainWindow extends Fragment implements View.OnClickListener {
     public void setProgress(long bytesCurrent, long bytesAll, long fileCurrent, long fileAll) {
         int percent = (int) ((double)bytesCurrent*100/(double)bytesAll);
         pb_progress.setProgress(percent);
-        String bytes = progress_bytes.replace("*", ""+bytesCurrent);
-        bytes = bytes.replace("?", ""+bytesAll);
+        String bytes = progress_bytes.replace("*", ""+bytesCurrent/1024);
+        bytes = bytes.replace("?", ""+bytesAll/1024);
         String files = progress_files.replace("*", ""+fileCurrent);
         files = files.replace("?", ""+fileAll);
         txtv_progress_bytes.setText(bytes);
@@ -184,8 +187,8 @@ public class MainWindow extends Fragment implements View.OnClickListener {
      */
     public void crypt(String name, String password) {
         showCurrentState(STATE.PROGRESS);
-        cryptController = new CryptFileController(this, name, password, Settings.MODE.CRYPT);
-        cryptController.execute();
+        fileCrypter = new FileCrypter(this, name, password, MODE.ENCRYPT);
+        fileCrypter.execute();
     }
 
     /**
@@ -193,8 +196,8 @@ public class MainWindow extends Fragment implements View.OnClickListener {
      */
     public void decrypt(String name, String password) {
         showCurrentState(STATE.PROGRESS);
-        cryptController = new CryptFileController(this, name, password, Settings.MODE.DECRYPT);
-        cryptController.execute();
+        fileCrypter = new FileCrypter(this, name, password, MODE.DECRYPT);
+        fileCrypter.execute();
     }
 
     public void finishOperation(String message) {

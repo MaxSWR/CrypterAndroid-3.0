@@ -1,13 +1,10 @@
-package com.cryptandroid.max.crypterandroid20;
-
-import org.apache.commons.io.FileUtils;
+package com.cryptandroid.max.crypterandroid20.controllers;
 
 import java.io.File;
 import java.io.FileFilter;
 import java.nio.ByteBuffer;
 
 /**
- * Created by MAX on 30.05.2018.
  * Класс для работы с файлами
  */
 
@@ -16,7 +13,6 @@ public class FileController {
 
     public static File[] getFiles() {
         return files;
-
     }
 
     public static void setFiles(File[] files) {
@@ -68,7 +64,7 @@ public class FileController {
      */
     public static String getExtensionFile(String fileName) {
         int i = fileName.lastIndexOf(".");
-        return (i > 0 && i < fileName.length()) ? fileName.substring(i+1) : null;
+        return (i > 0 && i < fileName.length()) ? fileName.substring(i+1) : "";
     }
 
     /**
@@ -78,7 +74,7 @@ public class FileController {
      */
     public static String getNameFile(String fileName) {
         int i = fileName.lastIndexOf(".");
-        return i > 0  ? fileName.substring(0, i) : null;
+        return i > 0  ? fileName.substring(0, i) : fileName;
     }
 
     /**
@@ -100,6 +96,24 @@ public class FileController {
      */
     public static byte[] LongToByteArray(long b) {
         return ByteBuffer.allocate(8).putLong(b).array();
+    }
+
+    /**
+     * Вернуть int из массива
+     * @param b - массив байт
+     * @return число
+     */
+    public static int byteArrayToInt(byte[] b) {
+        return ((b[0]&0xff) << 24) | ((b[1]&0xff) << 16) | ((b[2]&0xff) << 8) | (b[3]&0xff );
+    }
+
+    /**
+     * Вернуть массив байт из int
+     * @param b - число
+     * @return массив байт
+     */
+    public static byte[] IntToByteArray(int b) {
+        return ByteBuffer.allocate(4).putInt(b).array();
     }
 
 }

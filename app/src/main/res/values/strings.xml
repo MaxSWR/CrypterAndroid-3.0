@@ -1,75 +1,75 @@
 <resources>
-    <string name = "app_name"> CrypterAndroid 2.0 </ string>
+    <string name = "app_name"> CrypterAndroid 3.0 </string>
 
-    <string-array name = "key_length">
-        <item> 128 </ item>
-        <item> 192 </ item>
-        <item> 256 </ item>
-    </ string-array>
-    <string-array name = "key_lengthValues">
-        <item> 1 </ item>
-        <item> 2 </ item>
-        <item> 3 </ item>
+    <string-array name = "alg_name">
+        <item>GOST-34.12</item>
+        <item>AES</item>
+        <item>Threefish</item>
+    </string-array>
+    <string-array name = "alg_nameValues">
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
     </string-array>
 
     <string-array name = "mode">
-        <item> Everyone with each </ item>
-        <item> Safe </ item>
+        <item> Everyone with each </item>
+        <item> Safe </item>
     </string-array>
     <string-array name = "modeValues">
-        <item> 1 </ item>
-        <item> 2 </ item>
+        <item> 1 </item>
+        <item> 2 </item>
     </string-array>
 
     <string-array name = "defaultFolderList">
-        <item> "/ sdcard / cryptoAndroid" </ item>
+        <item> "/ sdcard / cryptoAndroid" </item>
     </string-array>
     <string-array name = "defaultFolderListValues">
-        <item> 1 </ item>
+        <item> 1 </item>
     </string-array>
 
-    <string name = "btn_choose_files"> Select files </ string>
-    <string name = "txtv_choose_items"> Selected items: </ string>
-    <string name = "txtv_choose_files"> Selected files: </ string>
-    <string name = "txtv_progress"> Progress </ string>
-    <string name = "txtv_progress_bytes"> Byte processing: * of? </ string>
-    <string name = "txtv_progress_files"> Processed files: * from? </ string>
-    <string name = "btn_finish"> Done </ string>
-    <string name = "btn_clear"> Clear </ string>
-    <string name = "btn_cancel"> Cancel </ string>
-    <string name = "txtv_name"> Name </ string>
-    <string name = "txtv_pass"> Password </ string>
+    <string name = "btn_choose_files"> Select files </string>
+    <string name = "txtv_choose_items"> Selected items: </string>
+    <string name = "txtv_choose_files"> Selected files: </string>
+    <string name = "txtv_progress"> Progress </string>
+    <string name = "txtv_progress_bytes"> Kb processing: * of? </string>
+    <string name = "txtv_progress_files"> Processed files: * from? </string>
+    <string name = "btn_finish"> Done </string>
+    <string name = "btn_clear"> Clear </string>
+    <string name = "btn_cancel"> Cancel </string>
+    <string name = "txtv_name"> Name </string>
+    <string name = "txtv_pass"> Password </string>
     <string name = "txtv_rep_pass"> Repeat the password </string>
-    <string name = "title_dialog_user_data">Enter user data </ string>
-    <string name = "title_dialog_new_folder"> New folder </ string>
-    <string name = "error_repeat_name_folder"> This folder already exists </ string>
-    <string name = "error_cant_mkdir"> Can not create the folder. Check the permissions </ string>
-    <string name = "OK"> OK </ string>
-    <string name = "error_repeat_password"> Passwords do not match! </ string>
-    <string name = "error_delete_files"> Failed to delete </ string>
-    <string name = "ckb_all_items"> All </ string>
-    <string name = "btn_menu"> Menu </ string>
-    <string name = "option_fm_menu0"> "New folder </ string>
-    <string name = "option_fm_menu1"> Copy </ string>
-    <string name = "option_fm_menu2"> Move </ string>
-    <string name = "option_fm_menu3"> Delete </ string>
-    <string name = "option_fm_menu4"> Paste </ string>
-    <string name = "option_fm_menu5"> Cancel </ string>
-    <string name = "algorithm"> Algorithm </ string>
-    <string name = "safety"> Key length, bit </ string>
-    <string name = "mode"> Mode </ string>
-    <string name = "defaultm"> Default </ string>
-    <string name = "speed"> High speed mode </ string>
-    <string name = "defaultFolder"> Default folder </ string>
-    <string name = "defaultFolderPath"> / sdcard / cryptoAndroid </ string>
-    <string name = "name"> Name </ string>
-    <string name = "password"> Password </ string>
-    <string name = "hidepath"> Hide names </ string>
-    <string name = "ownerpath"> Native paths </ string>
-    <string name = "deleteAfterAction"> Delete files </ string>
-    <string name = "good_work"> The operation was successful </ string>
-    <string name = "cancel_work"> The operation was canceled </ string>
-    <string name = "need_space"> Not enough space on the device! </ string>
-    <string name = "wrong_user_data"> Not a valid name and / or password! </ string>
-    <string name = "error_cant_create_new_file"> Can not create file in folder </ string>
-</ resources>
+    <string name = "title_dialog_user_data">Enter user data </string>
+    <string name = "title_dialog_new_folder"> New folder </string>
+    <string name = "error_repeat_name_folder"> This folder already exists </string>
+    <string name = "error_cant_mkdir"> Can not create the folder. Check the permissions </string>
+    <string name = "OK"> OK </string>
+    <string name = "error_repeat_password"> Passwords do not match! </string>
+    <string name = "error_delete_files"> Failed to delete </string>
+    <string name = "ckb_all_items"> All </string>
+    <string name = "btn_menu"> Menu </string>
+    <string name = "option_fm_menu0"> "New folder </string>
+    <string name = "option_fm_menu1"> Copy </string>
+    <string name = "option_fm_menu2"> Move </string>
+    <string name = "option_fm_menu3"> Delete </string>
+    <string name = "option_fm_menu4"> Paste </string>
+    <string name = "option_fm_menu5"> Cancel </string>
+    <string name = "algorithm"> Algorithm </string>
+    <string name = "safety"> Key length, bit </string>
+    <string name = "mode"> Mode </string>
+    <string name = "defaultm"> Default </string>
+    <string name = "speed"> High speed mode </string>
+    <string name = "defaultFolder"> Default folder </string>
+    <string name = "defaultFolderPath"> / sdcard / cryptoAndroid </string>
+    <string name = "name"> Name </string>
+    <string name = "password"> Password </string>
+    <string name = "hidepath"> Hide names </string>
+    <string name = "ownerpath"> Native paths </string>
+    <string name = "deleteAfterAction"> Delete files </string>
+    <string name = "good_work"> The operation was successful </string>
+    <string name = "cancel_work"> The operation was canceled </string>
+    <string name = "need_space"> Not enough space on the device! </string>
+    <string name = "wrong_user_data"> Not a valid name and / or password! </string>
+    <string name = "error_cant_create_new_file"> Can not create file in folder </string>
+</resources>

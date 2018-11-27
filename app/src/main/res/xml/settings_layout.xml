@@ -3,10 +3,10 @@
 
     <ListPreference
         android:defaultValue="1"
-        android:entries="@array/key_length"
-        android:entryValues="@array/key_lengthValues"
-        android:key="safety"
-        android:title="@string/safety" />
+        android:entries="@array/alg_name"
+        android:entryValues="@array/alg_nameValues"
+        android:key="algname"
+        android:title="@string/algorithm" />
     <ListPreference
         android:defaultValue="1"
         android:entries="@array/mode"

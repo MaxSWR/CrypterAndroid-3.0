@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".WindowsController">
+            android:name=".controllers.WindowsController">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
